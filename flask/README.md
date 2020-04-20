@@ -1,6 +1,9 @@
-# メモ
+# WSGIのサンプル
 
-全部python3。事前にこのフォルダの1個上のREADME.mdを実行。
+Flaskを使ったWSGIのサンプル。
+
+まず、1個上のREADME.mdを読んでuwsgiをインストール。
+
 
 # Flask 単体
 
@@ -26,6 +29,8 @@ kill %1
 uwsgi uwsgi_http.ini
 ```
 で起動。
+同じディレクトリに日付単位のログと、pidファイルが出ます。
+
 
 テストは
 ``` sh
@@ -36,6 +41,7 @@ uwsgi uwsgi_http.ini
 ``` sh
 ./stop_uWSGI.sh
 ```
+
 
 # Flask + uWSGI + nginx
 
@@ -49,13 +55,14 @@ sudo chmod 775 /run/uwsgi
 ```
 
 heiwaは作業ユーザ、www-dataはnginxの実行グループ。
-`/run`は好きにアレンジしてください。
+`/run`は好きにアレンジ。
 
 ```sh
 uwsgi uwsgi_socket.ini
 ```
-で起動。`/run/uwsgi/1.sock`ができてることを確認してください。
+で起動。`/run/uwsgi/1.sock`ができてることを確認。
 
+rootになって、
 nginxの設定例はこんな感じ。
 ```
   location /uwsgi {
