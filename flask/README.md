@@ -58,7 +58,7 @@ heiwaは作業ユーザ、www-dataはnginxの実行グループ。
 `/run`は好きにアレンジ。
 
 ```sh
-uwsgi uwsgi_socket.ini
+uwsgi uwsgi_sock.ini
 ```
 で起動。`/run/uwsgi/1.sock`ができてることを確認。
 
